@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&display=swap");
+
+$primaryColor: #f57b47;
+$secondaryColor: #26386d;
+$tretaryColor: #944b9f;
+$textColor: #25366f;
+
+@mixin button($color: $primaryColor) {
+  color: white;
+  font-weight: 600;
+  white-space: nowrap;
+  background-color: $color;
+  border-radius: 4rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: $secondaryColor;
+}
+
+.landing-page {
+  height: 100vh;
+  background-image: url(../assets/bg.png);
+  background-size: 50vmax;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+
+  @media screen and (max-width: 500px) {
+    background-size: 45vmax;
+  }
+}
+
+.custom-nav {
+  padding: 1rem 3rem;
+  #navbarNav {
+    .navbar-nav {
+      .nav-item {
+        a {
+          font-weight: 400;
+          text-transform: uppercase;
+          color: black;
+          font-size: 1rem;
+          margin-right: 1rem;
+
+          &:hover {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  .bungkus {
+    .log-btn {
+      @include button;
+      padding: 0.3rem 0.8rem;
+
+      &:hover {
+        background-color: white;
+        color: $secondaryColor;
+        border: 2px solid $primaryColor;
+      }
+    }
+  }
+  @media screen and (max-width: 992px) {
+    padding: 1rem;
+  }
+}
+
+.container {
+  margin-top: 110px;
+
+  .h1 {
+    color: $primaryColor;
+    font-size: 3.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .h2 {
+    color: $secondaryColor;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-top: -1.5rem;
+  }
+
+  .paragraph {
+    color: $secondaryColor;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 300px;
+  }
+
+  a {
+    @include button($color: $tretaryColor);
+    padding: 0.5rem 1.5rem;
+
+    &:hover {
+      background-color: white;
+      color: $secondaryColor;
+      border: 2px solid $tretaryColor;
+    }
+  }
+
+  .icon {
+    img {
+      margin-top: 7rem;
+      width: 120px;
+
+      @media screen and (max-width: 992px) {
+        margin-top: 3rem;
+      }
+    }
+  }
+  @media screen and (max-width: 992px) {
+    margin-top: 45px;
+  }
+}
